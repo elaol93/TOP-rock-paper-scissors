@@ -5,52 +5,63 @@
 </head>
 <body>
     <script type="text/javascript">
-        function isValid (myInput) {
+        function playerTurn() {
             // checks if the users input is valid
+            let playerInput = prompt("Please type rock, paper, or scissors: ");
             let validWords = ["rock", "paper", "scissors"];
-            myInput = myInput.toLowerCase();
-            return (validWords.includes(myInput)) ? true : false;
+            playerInput = playerInput.toLowerCase();
+
+            while (validWords.includes(playerInput) == false) {
+                playerInput = prompt("Invalid input! Please type rock, paper, or scissors: ");
+                playerInput = playerInput.toLowerCase();
+            }
+
+            return playerInput;
         }
 
-        function aiTurn () {
+        function aiTurn() {
             //returns a random word
             let validWords = ["rock", "paper", "scissors"];
             let choice = validWords[Math.floor(Math.random()*validWords.length)];
             return choice;
         }
 
-        function singleGame (myInput) {
+        function singleGame() {
+            let player = playerTurn();
             let ai = aiTurn();
-            let result = myInput + ', ' + ai;
+            let result = player + ', ' + ai;
             let winIf = ['rock, scissors', 'scissors, paper', 'paper, rock'];
             let tieIf = ['paper, paper', 'scissors, scissors', 'rock, rock'];
-            console.log(ai);
+
             while (tieIf.includes(result)) {
                 ai = aiTurn();
-                result = myInput + ', ' + ai;
+                result = player + ', ' + ai;
             }
-            console.log(ai);
+
             return (winIf.includes(result)) ? 'won' : 'lost';
         }
 
-        function game (myInput) {
+        function game () {
             //plays five games and returns the winner
-            let myScore;
-            let computerScore;
+            let playerScore = 0;
+            let computerScore = 0;
 
             for (let i = 0; i < 5; i++) {
-                if (singleGame(myInput) == "won") {
-                    myScore++;
+                if (singleGame() == "won") {
+                    console.log("You won this round!");
+                    playerScore++;
                 }
                 else {
+                    console.log("You lost this round!");
                     computerScore++;
                 }
             }
 
-            return (computerScore < myScore) ? "Congratulations, you won!" : "Better luck next time!";
+            return (computerScore < playerScore) ? "Congratulations, you won the game!" : "Better luck next time!";
         }
 
-        let me = prompt("Please type rock,paper, or scissors: ");
+        console.log(game());
+
     </script>
 </body>
 </html>
