@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function isValid (myInput) {
+            // checks if the users input is valid
+            let validWords = ["rock", "paper", "scissors"];
+            myInput = myInput.toLowerCase();
+            return (validWords.includes(myInput)) ? true : false;
+        }
+        let me = prompt("Please type rock,paper, or scissors: ");
+    </script>
+</body>
+</html>
