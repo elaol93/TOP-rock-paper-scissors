@@ -11,6 +11,29 @@
             myInput = myInput.toLowerCase();
             return (validWords.includes(myInput)) ? true : false;
         }
+
+        function aiTurn () {
+            //returns a random word
+            let validWords = ["rock", "paper", "scissors"];
+            let choice = validWords[Math.floor(Math.random()*validWords.length)];
+            return choice;
+        }
+
+        function singleGame (myInput) {
+            let ai = aiTurn();
+            let result = myInput + ', ' + ai;
+            let winIf = ['rock, scissors', 'scissors, paper', 'paper, rock'];
+            let tieIf = ['paper, paper', 'scissors, scissors', 'rock, rock'];
+            console.log(ai);
+            while (tieIf.includes(result)) {
+                ai = aiTurn();
+                result = myInput + ', ' + ai;
+            }
+            console.log(ai);
+            return (winIf.includes(result)) ? 'won' : 'lost';
+        }
+
+
         let me = prompt("Please type rock,paper, or scissors: ");
     </script>
 </body>
