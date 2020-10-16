@@ -23,7 +23,7 @@ p {
 
 #score {
     position: absolute;
-    margin: 35vh 5vw 0vh 74vw;
+    margin: 30vh 5vw 0vh 78vw;
     padding: 30px;
     border: 5px solid white;
     box-shadow: 0 0 10px orange;
@@ -31,7 +31,7 @@ p {
  
 #next {
     height: 6.5vh;
-    width: 14vh;
+    width: 28vh;
     border: solid 2px white;
     background-color: transparent;
 
