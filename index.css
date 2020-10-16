@@ -1,0 +1,125 @@
+@font-face {
+    font-family: Aladin;
+    src: url(fonts/Aladin-Regular.ttf);
+}
+
+body {
+    background-image: url("images/background.png");
+    background-color: #1c1c1c;
+
+    font-family: Aladin, sans-serif;
+    color: white;
+}
+
+p {
+    font-size: 2em;
+}
+
+#instructions {
+    padding: 20px;
+    margin: auto;
+    text-shadow: 0 0 3px #ffffff;
+}
+
+#score {
+    position: absolute;
+    margin: 35vh 5vw 0vh 74vw;
+    padding: 30px;
+    border: 5px solid white;
+    box-shadow: 0 0 10px orange;
+}
+ 
+#next {
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    margin: 64vh 10vw 0vh 74vw;
+    border: solid 2px white;
+    background-color: transparent;
+
+    font-family: Aladin, sans-serif;
+    font-size: 1.8em;
+    color: white;
+    text-shadow: 0 0 3px #ffffff;
+}
+
+.next {
+    opacity: 20%;
+}
+
+#player-score {
+    text-shadow: 0 0 4px #0016ff;
+}
+
+#computer-score {
+    text-shadow: 0 0 4px red;
+}
+
+.all-buttons {
+    text-align: center;
+}
+
+.button {
+    padding: 30px;
+    max-width: 11%;
+    height: auto;
+}
+
+.button:focus {
+    outline: 0;
+}
+ 
+#player .rock-shine:hover {
+    filter: drop-shadow(0 0 4px #dc46a7);
+}
+
+#player .paper-shine:hover {
+    filter: drop-shadow(0 0 5px #3b5d8a);
+}
+
+#player .scissors-shine:hover {
+    filter: drop-shadow(0 0 4px #c28925);
+}
+
+.scissors {
+    position: relative;
+    top: 2px;
+}
+
+footer {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 0.35vw;
+    line-height: 3px;
+}
+
+a {
+    font-size: 0.7vw;
+}
+
+#flex-wrapper {
+    display: flex;
+    min-height: 97vh;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+/***********************************************************/
+/* NEON CLASSES ACTIVATED BY JS */
+/***********************************************************/
+.neon-rock {
+    filter: drop-shadow(0 0 4px #dc46a7);
+}
+
+.neon-paper {
+    filter: drop-shadow(0 0 5px #3b5d8a);
+}
+
+.neon-scissors {
+    filter: drop-shadow(0 0 4px #c28925);
+}
+
+.neon-next {
+    opacity: 100%;
+    box-shadow: 0 0 10px orange;
+}

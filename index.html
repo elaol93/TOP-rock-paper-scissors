@@ -1,67 +1,111 @@
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="index.css">
 <head>
-    <title></title>
+    <title>Rock, paper, scissors</title>
 </head>
 <body>
-    <script type="text/javascript">
-        function playerTurn() {
-            // checks if the users input is valid
-            let playerInput = prompt("Please type rock, paper, or scissors: ");
-            let validWords = ["rock", "paper", "scissors"];
-            playerInput = playerInput.toLowerCase();
+    <div id="flex-wrapper">
+        <div id="computer" class="all-buttons">
+            <img class="rock button" src="images/rock.png" alt="rock icon">
+            <img class="scissors button" src="images/scissors.png" alt="scissors icon">
+            <img class="paper button" src="images/paper.png" alt="paper icon">
+        </div>
 
-            while (validWords.includes(playerInput) == false) {
-                playerInput = prompt("Invalid input! Please type rock, paper, or scissors: ");
-                playerInput = playerInput.toLowerCase();
-            }
+        <p id="instructions">Please choose rock, paper, or scissors!</p>
 
-            return playerInput;
-        }
+        <div id="score">
+            <p id="player-score">Player: 0</p>
+            <p id="computer-score">Computer: 0</p>
+        </div>
 
-        function aiTurn() {
-            //returns a random word
-            let validWords = ["rock", "paper", "scissors"];
-            let choice = validWords[Math.floor(Math.random()*validWords.length)];
-            return choice;
-        }
+        <button id="next" class="next" disabled=true>Next</button>
 
-        function singleGame() {
-            let player = playerTurn();
-            let ai = aiTurn();
-            let result = player + ', ' + ai;
-            let winIf = ['rock, scissors', 'scissors, paper', 'paper, rock'];
-            let tieIf = ['paper, paper', 'scissors, scissors', 'rock, rock'];
+        <div id="player" class="all-buttons">
+            <input class="rock button rock-shine" type="image" name="rock" src="images/rock.png">
+            <input class="scissors button scissors-shine" type="image" name=scissors src="images/scissors.png">
+            <input class="paper button paper-shine" type="image" name=paper src="images/paper.png">
+        </div>
 
-            while (tieIf.includes(result)) {
-                ai = aiTurn();
-                result = player + ', ' + ai;
-            }
+        <footer>
+            <hr>
+            <p>&#169; Djordje Pejic</p>
+            <a href="https://www.vecteezy.com/free-vector/rock-paper-scissors">Rock Paper Scissors Vectors by Vecteezy</a>
+        </footer>
+    </div>
 
-            return (winIf.includes(result)) ? 'won' : 'lost';
-        }
+    <script src="app.js"></script>
 
-        function game () {
-            //plays five games and returns the winner
-            let playerScore = 0;
-            let computerScore = 0;
+    <!-- <script type="text/javascript">
+        const button = document.querySelector('button');
+        button.addEventListener('click', () => {console.log('clicked');});
 
-            for (let i = 0; i < 5; i++) {
-                if (singleGame() == "won") {
-                    console.log("You won this round!");
-                    playerScore++;
-                }
-                else {
-                    console.log("You lost this round!");
-                    computerScore++;
-                }
-            }
 
-            return (computerScore < playerScore) ? "Congratulations, you won the game!" : "Better luck next time!";
-        }
 
-        console.log(game());
+        // console.log(test(playerTurn));
+        // function computerTurn() {
+        //     let validWords = ["rock", "paper", "scissors"];
+        //     let choice = validWords[Math.floor(Math.random()*validWords.length)];
+        // }
 
-    </script>
+        // function playerTurn() {
+        //     // checks if the users input is valid
+        //     let playerInput = prompt("Please type rock, paper, or scissors: ");
+        //     let validWords = ["rock", "paper", "scissors"];
+        //     playerInput = playerInput.toLowerCase();
+
+        //     while (validWords.includes(playerInput) == false) {
+        //         playerInput = prompt("Invalid input! Please type rock, paper, or scissors: ");
+        //         playerInput = playerInput.toLowerCase();
+        //     }
+
+        //     return playerInput;
+        // }
+
+        // function aiTurn() {
+        //     //returns a random word
+        //     let validWords = ["rock", "paper", "scissors"];
+        //     let choice = validWords[Math.floor(Math.random()*validWords.length)];
+        //     return choice;
+        // }
+
+        // function singleGame() {
+        //     let player = playerTurn();
+        //     let ai = aiTurn();
+        //     let result = player + ', ' + ai;
+        //     let winIf = ['rock, scissors', 'scissors, paper', 'paper, rock'];
+        //     let tieIf = ['paper, paper', 'scissors, scissors', 'rock, rock'];
+
+        //     while (tieIf.includes(result)) {
+        //         ai = aiTurn();
+        //         result = player + ', ' + ai;
+        //     }
+
+        //     return (winIf.includes(result)) ? 'won' : 'lost';
+        // }
+
+        // function game () {
+        //     //plays five games and returns the winner
+        //     let playerScore = 0;
+        //     let computerScore = 0;
+
+        //     for (let i = 0; i < 5; i++) {
+        //         if (singleGame() == "won") {
+        //             console.log("You won this round!");
+        //             playerScore++;
+        //         }
+        //         else {
+        //             console.log("You lost this round!");
+        //             computerScore++;
+        //         }
+        //     }
+
+        //     return (computerScore < playerScore) ? "Congratulations, you won the game!" : "Better luck next time!";
+        // }
+
+        // console.log(game());
+
+    </script> -->
 </body>
 </html>
