@@ -12,7 +12,7 @@ body {
 }
 
 p {
-    font-size: 2em;
+    font-size: 2.3vw;
 }
 
 #instructions {
@@ -30,15 +30,13 @@ p {
 }
  
 #next {
-    height: 50px;
-    width: 200px;
-    position: absolute;
-    margin: 64vh 10vw 0vh 74vw;
+    height: 6.5vh;
+    width: 14vh;
     border: solid 2px white;
     background-color: transparent;
 
     font-family: Aladin, sans-serif;
-    font-size: 1.8em;
+    font-size: 2.3vw;
     color: white;
     text-shadow: 0 0 3px #ffffff;
 }
@@ -89,8 +87,11 @@ p {
 footer {
     font-family: Arial, sans-serif;
     text-align: center;
-    font-size: 0.35vw;
     line-height: 3px;
+}
+
+footer p {
+    font-size: 1vw;
 }
 
 a {
